@@ -1,0 +1,72 @@
+package YHS20220793_Mid2;
+
+import java.util.Scanner;
+
+public class YHS20220793_Mid2 {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		
+		int playerheart1 = 3;
+		int playerheart2 = 3;
+		
+		while (playerheart1 > 0 && playerheart2 > 0) {
+			System.out.println("\n플레이어1:가위(1),바위(2),보(3) 중 선택");
+			int p1= scanner.nextInt();
+			
+			System.out.println("플레이어2:가위(1),바위(2),보(3) 중 선택");
+			int p2 = scanner.nextInt();
+		
+		switch(p1) {
+		case 1:
+			if(p2 == 1) {
+				System.out.println("무승부");
+			}
+			if(p2 == 2) {
+				System.out.println("플레이어2 승리");
+				playerheart1--;
+			}
+			if(p2== 3) {
+				System.out.println("플레이어1 승리");
+				playerheart2--;
+			}
+			break;
+		case 2:
+			if(p2 == 1) {
+				System.out.println("플레이어1 승리");
+				playerheart2--;
+			}
+			if(p2 == 2) {
+				System.out.println("무승부");
+			}
+			if(p2 == 3) {
+				System.out.println("플레이어2 승리");
+				playerheart1--;
+			}
+			break;
+		case 3:
+			if(p2 == 1) {
+				System.out.println("플레이어2 승리");
+				playerheart1--;
+			}
+			if(p2 == 2) {
+				System.out.println("플레이어1 승리");
+				playerheart2--;
+			}
+			if(p2 == 3) {
+				System.out.println("무승부");
+			}
+			break;
+		}
+		
+		System.out.println("플레이어1 남은 목숨:" + playerheart1);
+		System.out.println("플레이어2 남은 목숨:" + playerheart2);
+	}
+		if (playerheart1 == 0) {
+			System.out.println("플레이어 1 목숨이 끝났습니다. 플레이어2의 승리");
+	}
+		else if (playerheart2 == 0) {
+			System.out.println("플레이어 2 목숨이 끝났습니다. 플레이어1의 승리");
+	}
+	scanner.close();
+	}
+}
